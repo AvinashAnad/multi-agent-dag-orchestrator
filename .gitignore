@@ -1,0 +1,42 @@
+# ── Secrets & local config ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python virtual environments ───────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pypackages__/
+
+# ── Python cache & build artefacts ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── uv / pip lock ────────────────────────────────────────────────────────────
+# Uncomment if you don't want to track the lock file:
+# uv.lock
+
+# ── FAISS / vector store (runtime state, large & binary) ─────────────────────
+code/state/
+*.faiss
+*.pkl
+
+# ── Query output files ────────────────────────────────────────────────────────
+code/Query*.txt
+
+# ── macOS metadata ────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Editor / IDE ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo

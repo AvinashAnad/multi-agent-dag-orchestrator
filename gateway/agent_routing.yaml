@@ -1,0 +1,27 @@
+# V8 agent → provider pinning.
+# To switch to ollama-only: uncomment the OLLAMA ONLY block, comment out the ACTIVE block,
+# and set LLM_ORDER=ollama in .env.
+
+# ── OLLAMA ONLY (uncomment to enable) ────────────────────────────────────────
+# planner:          ollama
+# researcher:       ollama
+# distiller:        ollama
+# summariser:       ollama
+# critic:           ollama
+# formatter:        ollama
+# retriever:        ollama
+# sandbox_executor: ollama
+# coder:            ollama
+# browser:          ollama
+
+# ── ACTIVE (mixed providers) ──────────────────────────────────────────────────
+planner:          gemini
+researcher:       groq
+distiller:        gemini
+summariser:       gemini
+critic:           gemini
+formatter:        gemini
+retriever:        ollama
+sandbox_executor: ollama
+coder:            gemini
+browser:          gemini
