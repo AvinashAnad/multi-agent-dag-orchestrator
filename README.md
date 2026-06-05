@@ -265,3 +265,27 @@ closest in size."  > QueryI.txt 2>&1
 Query J. Graceful failure
 
 uv run python flow.py "Read /nonexistent/path.txt and tell me what's in it."  > QueryJ.txt 2>&1 
+
+
+### Stage 2
+Design one query that requires parallel fan-out. The query must have at least three independent sub-tasks that the Planner correctly emits as concurrent nodes. Verify that the parallel layer's wall-clock is the maximum of the branches, not the sum.
+
+uv run python flow.py "Search the web for each of these separately: (1) what language is Python's asyncio event loop written in, (2) what year was NetworkX first released, (3) what does the acronym FAISS stand for. Combine all three answers."
+
+### Stage 3 
+Design one query that requires a Critic verdict. Choose a property the Critic can actually verify with the tools available to it. The Critic must produce both a pass and a fail across two runs of the query, and the fail must successfully splice in a Planner recovery that produces a corrected answer.
+
+uv run python flow.py "Search the web for the current CEO of Microsoft and write a summary of their name that is exactly 4 words. Use a critic to enforce the word count constraint."
+
+### Stage 4
+Fill in the Coder skill. The current prompts/coder.md is a stub; replace it with a prompt that emits Python suitable for the SandboxExecutor. Demonstrate the Coder on one query where the answer requires computation the Formatter cannot reliably produce from text alone.
+
+uv run python flow.py "Calculate the exact number of words that are exactly 7 characters long in the paper papers/lora.md. You must write a Python script using the Coder skill to do this calculation, rather than estimating."
+
+### Stage 5
+Add one new skill to agent_config.yaml. Choose a skill that the existing catalogue does not cover. Write its prompt file. Write one query that exercises it. The orchestrator should not need modification; if it does, the modification is reportable.
+
+Skill added : comparator.md in prompts/
+Updated files : planner.md in prompts/ and agent_config.yaml
+
+uv run python flow.py "Compare the papers papers/cot.md and papers/react.md. Specifically create a comparison table comparing their main objectives, the benchmarks they evaluate on, and their core methodology. Use the comparator skill to generate the comparison matrix."

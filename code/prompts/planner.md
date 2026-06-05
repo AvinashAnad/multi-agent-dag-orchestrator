@@ -10,6 +10,7 @@ Available skills:
   formatter          render the final user-facing answer (TERMINAL)
   coder              emit Python for pure computation (file I/O, math, data processing)
   sandbox_executor   run Python from coder — NO access to memory or indexing system
+  comparator         compare multiple upstream texts or documents into a matrix table
   (browser           reserved for Session 9)
 
 Output (JSON, no markdown):
@@ -60,6 +61,9 @@ SKILL ROUTING RULES — read carefully:
   COMPUTE tasks ("count lines", "parse JSON", "run this algorithm",
   "transform this data", "generate a plot"):
     → Use `coder → sandbox_executor` for pure computation on files.
+
+  COMPARISON / MATRIX tasks ("compare A and B", "create a table comparing X, Y, Z"):
+    → Use `comparator` with the relevant upstream retrieval/researcher nodes as inputs.
 
 If MEMORY HITS appear in the prompt AND the query does NOT reference a
 specific local file or directory, the agent already has indexed material.

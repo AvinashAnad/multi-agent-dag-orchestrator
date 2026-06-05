@@ -16,7 +16,7 @@
 
 # ── ACTIVE (mixed providers) ──────────────────────────────────────────────────
 planner:          gemini
-researcher:       groq
+researcher:       gemini
 distiller:        gemini
 summariser:       gemini
 critic:           gemini

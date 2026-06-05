@@ -89,3 +89,11 @@ browser:
   temperature: 0.3
   max_tokens: 1500
   description: STUB. Reserved for Session 9.
+
+# New Skill Section5
+comparator:
+  prompt: prompts/comparator.md
+  tools_allowed: []
+  temperature: 0.3
+  max_tokens: 2000
+  description: Compares multiple upstream text blocks, findings, or documents across specific dimensions and builds a structured comparison matrix (markdown table).
