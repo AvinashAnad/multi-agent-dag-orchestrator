@@ -1,4 +1,4 @@
-# EAGV3 Session 8 — Student Scaffolding
+# Multi Agent DAG Orchestration and Skill Catalogs
 
 Multi-agent growing-graph orchestrator built on the Session 7 cognitive
 architecture. The graph itself is the agent loop: each node is a typed
@@ -289,3 +289,8 @@ Skill added : comparator.md in prompts/
 Updated files : planner.md in prompts/ and agent_config.yaml
 
 uv run python flow.py "Compare the papers papers/cot.md and papers/react.md. Specifically create a comparison table comparing their main objectives, the benchmarks they evaluate on, and their core methodology. Use the comparator skill to generate the comparison matrix."
+
+
+
+https://youtu.be/j3-em7YxstA
+
